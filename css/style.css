@@ -1,0 +1,77 @@
+
+.login-bg{
+    background-image: url("../images/login_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.center {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error {
+    color: #f00;
+    display: block;
+}
+
+
+body{
+    min-height: 113vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    margin-top: auto;
+
+}
+#login-body{
+    min-height: 100vh;
+}
+.serious_message{
+    font-size: 40px;
+    text-decoration: underline red;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-group p {
+    margin: 0;
+    padding: 0 5px;
+}
+.smallImg{
+    width: 90px;
+    border-radius: 5%;
+}
+
+.abbr-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.abbr-text,
+.abbr-image {
+    position: absolute;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.abbr-container:hover .abbr-text,
+.abbr-container:hover .abbr-image {
+    display: inline-block;
+}
+
+.abbr-image {
+    width: 256px;
+    vertical-align: middle;
+    border-radius: 10%;
+    z-index: 9999;
+    top:100px
+}
