@@ -130,7 +130,7 @@ $_SESSION['programDay'] = $programDay;
                 $dayName = '';
                 $dayName = getDayName($pdo,$dayId);
                 echo '<label for="exerciseCount_' . $dayId . '">How many exercises should there be on, ' . $dayName . '</label>';
-                echo '<input type="number" name="exerciseCount[]" id="exerciseCount_' . $dayId . '" /><br>';
+                echo '<input type="number" name="exerciseCount[]" min=1 id="exerciseCount_' . $dayId . '" /><small></small><br>';
 
             }
 
