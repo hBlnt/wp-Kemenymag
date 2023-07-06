@@ -82,6 +82,7 @@ makeCreatorId($pdo,$trainer);
         <form method="post" action="insertTrainerProgram2.php">
             <label for="programName" class="label">Name:</label>
             <input type="text" id="programName" name="programName">
+            <small></small>
             <br>
             <label  for="programCategory" class="label">category: </label>
             <select name="category" id="programCategory" class="form-control-sm">
@@ -102,6 +103,7 @@ makeCreatorId($pdo,$trainer);
                 }
                 ?>
             </select>
+            <small></small>
             <br>
 
             <label  for="programDay" class="label">Which days should the program happen: </label>
@@ -121,6 +123,7 @@ makeCreatorId($pdo,$trainer);
                 }
                 ?>
             </select>
+            <small></small>
             <br>
             <input type="hidden" name="creator" value="<?php echo getCreatorId($pdo,$trainer) ?>">
 
