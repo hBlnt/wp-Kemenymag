@@ -37,6 +37,9 @@ function init() {
     const resetForm = document.querySelector('#resetForm');
     const editForm = document.querySelector('#editForm');
     const insertForm = document.querySelector('#insertForm');
+    
+    const trainerProgramForm1 = document.querySelector('#trainerProgramForm1');
+    const trainerProgramForm2 = document.querySelector('#trainerProgramForm2');
 
     if (fl !== null) {
         fl.addEventListener('click', function (e) {
@@ -122,6 +125,67 @@ function init() {
         });
     }
 
+    if (trainerProgramForm1 !== null) {
+        trainerProgramForm1.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+
+            const programName =document.querySelector('#programName');
+            const programCategory =document.querySelector('#programCategory');
+            const programDay =document.querySelector('#programDay');
+
+            if (isEmpty(programName.value.trim())) {
+                showErrorMessage(programName, "Name your program!");
+                isValid = false;
+            } else {
+                hideErrorMessage(programName);
+            }
+
+            if (isEmpty(programCategory.value.trim())) {
+                showErrorMessage(programCategory, "Choose a category.");
+                isValid = false;
+            } else {
+                hideErrorMessage(programCategory);
+            }
+
+            if (isEmpty(programDay.value.trim())) {
+                showErrorMessage(programDay, "Choose at least 1 day.");
+                isValid = false;
+            } else {
+                hideErrorMessage(programDay);
+            }
+
+            if (isValid) this.submit();
+        });
+    }
+
+    if (trainerProgramForm2 !== null) {
+        trainerProgramForm2.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+
+            const numberInput = document.querySelectorAll('input[type="number"]');
+
+            numberInput.forEach(function (numberInput){
+            if (isEmpty(numberInput.value.trim())) {
+                showErrorMessage(numberInput, "Type in your exercise count!");
+                isValid = false;
+            } else if (isNaN(numberInput.value.trim()) || numberInput.value.trim()   <= 0) {
+                showErrorMessage(numberInput, "Please enter a positive number!");
+                isValid = false;
+            }
+            else {
+                hideErrorMessage(numberInput);
+            }
+            });
+
+            if (isValid) this.submit();
+        });
+    }
 
 
     if (loginForm !== null) {
